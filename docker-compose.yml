@@ -1,0 +1,11 @@
+services:
+  pokedex-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_POKEAPI_URL: https://pokeapi.co/api/v2
+    container_name: pokedex-app-container
+    ports:
+      - "8080:80"
+    restart: unless-stopped
